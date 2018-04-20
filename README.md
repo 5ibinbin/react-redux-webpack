@@ -1,4 +1,4 @@
-# React + Redux + webpack + Router
+# React + Redux + webpack4.0 + Router
 
 ## 项目前景
 
@@ -108,7 +108,7 @@ npm run build (打包)
 
 ## 项目搭建流程
 
-- `React` 项目创建
+- `React` 项目依赖管理
 - `redux` 集成
 - `router` 集成
 - `webpack` 集成
