@@ -110,8 +110,8 @@ npm run build (打包)
 
 - `React` 项目依赖管理
 - `redux` 集成
-- `router` 集成
 - `webpack` 集成
+- `router` 的使用
 	
 	  
   
