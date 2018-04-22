@@ -35,7 +35,7 @@ const webpackConfigDev = {
     ],
     devServer: {
         contentBase: resolve('/build'),
-        historyApiFallback: false,
+        historyApiFallback: true,
         hot: false,
         host: '0.0.0.0',
         port: PORT,
