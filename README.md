@@ -74,7 +74,7 @@ npm run build (打包)
 
 ## 项目搭建流程
 
-- [React项目依赖管理](https://github.com/5ibinbin/react-redux-webpack/wiki/React%E9%A1%B9%E7%9B%AE%E9%9B%86%E6%88%90)
+- [React项目集成](https://github.com/5ibinbin/react-redux-webpack/wiki/React%E9%A1%B9%E7%9B%AE%E9%9B%86%E6%88%90)
 - [redux实例教程](https://github.com/5ibinbin/react-redux-webpack/wiki/Redux%E5%AE%9E%E4%BE%8B%E6%95%99%E7%A8%8B)
 - [webpack总结](https://github.com/5ibinbin/react-redux-webpack/wiki/webpack%E6%80%BB%E7%BB%93)
 - [router的使用](https://github.com/5ibinbin/react-redux-webpack/wiki/Antd-Router)
