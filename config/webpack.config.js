@@ -9,8 +9,7 @@ module.exports = {
     entry: path.join(__dirname, '/src/index'),
     output: {
         path: path.join(__dirname, './build'),
-        filename: '[name].bundle.js',
-        chunkFilename: '[name].[hash:4].js',
+        filename: '[name].bundle.js'
     },
     resolve: {
         extensions: ['.js', '.jsx', 'json', 'css', 'scss'],
@@ -21,8 +20,8 @@ module.exports = {
             reducers: path.join(__dirname, '/../src/reducers'),
             utils: path.join(__dirname, '/../src/utils'),
             style: path.join(__dirname, '/../src/style'),
-            pages: path.join(__dirname, '/../src/assets'),
-            store: path.join(__dirname, '/../src/assets'),
+            pages: path.join(__dirname, '/../src/pages'),
+            store: path.join(__dirname, '/../src/store'),
             assets: path.join(__dirname, '/../src/assets'),
         },
     },
@@ -38,9 +37,31 @@ module.exports = {
                 },
                 exclude: /node_modules/
             },
+            // {
+            //     test: /\.(css|scss)$/,
+            //     loader: "style-loader!css-loader!sass-loader"
+            // },
             {
-                test: /\.(css|scss)$/,
-                loader: "style-loader!css-loader!sass-loader"
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [{
+                    loader: "style-loader"
+                }, {
+                    loader: "css-loader"
+                }, {
+                    loader: "less-loader",
+                    options: { javascriptEnabled: true }
+                }]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -49,7 +70,13 @@ module.exports = {
                     limit: 8192,
                     name: 'img/[name].[hash:4].[ext]'
                 }
-            }
+            },
+            {
+                test: /\.html$/,
+                use: {
+                    loader: "html-loader",
+                }
+            },
         ]
     }
 };

@@ -12,6 +12,7 @@ import {Provider} from 'react-redux'
 
 import Login from './pages/login/login';
 import Home from './pages/home/home';
+import Test from './pages/container/test';
 
 const store = configureStore();
 
@@ -21,6 +22,7 @@ ReactDOM.render(
             <Switch>
                 <Route path="/" component={Login} exact/>
                 <Route path="/home" component={Home}/>
+                <Route path="/home/test" component={Test}/>
             </Switch>
         </BrowserRouter>
     </Provider>, document.getElementById('root'));

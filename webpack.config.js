@@ -37,10 +37,6 @@ module.exports = {
                 },
                 exclude: /node_modules/
             },
-            // {
-            //     test: /\.(css|scss)$/,
-            //     loader: "style-loader!css-loader!sass-loader"
-            // },
             {
                 test: /\.css$/,
                 use: [

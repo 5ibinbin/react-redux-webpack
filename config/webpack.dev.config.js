@@ -10,6 +10,7 @@ const webpackConfig = require('./webpack.config');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PORT = 3000;
 function resolve(relatedPath) {
@@ -23,15 +24,15 @@ const webpackConfigDev = {
             'process.env.NODE_ENV': JSON.stringify('development'),
             IS_DEVELOPMETN: true,
         }),
+        new CleanWebpackPlugin(['build']),
+        new HtmlWebpackPlugin({
+            template: resolve('/public/index.html'),
+        }),
+        new ExtractTextPlugin('style.css'),
         new OpenBrowserPlugin({
             url: `http://localhost:${PORT}`,
         }),
-        // new CleanWebpackPlugin(['build']),
-        new HtmlWebpackPlugin({
-            template: resolve('/public/index.html'),
-        })
     ],
-    devtool: 'source-map',
     devServer: {
         contentBase: resolve('/build'),
         historyApiFallback: false,
