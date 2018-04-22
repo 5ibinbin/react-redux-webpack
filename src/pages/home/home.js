@@ -40,7 +40,7 @@ class Home extends React.Component {
                     </Menu>
                     <Layout className="home-right">
                         <Breadcrumb style={{background: '#fff', padding: '20px 16px', marginBottom: '20px'}}>
-                            <Breadcrumb.Item>贷超天玑系统</Breadcrumb.Item>
+                            <Breadcrumb.Item>后台管理系统</Breadcrumb.Item>
                             <Breadcrumb.Item>{this.state.title}</Breadcrumb.Item>
                             <Breadcrumb.Item>{this.state.subTitle}</Breadcrumb.Item>
                         </Breadcrumb>
@@ -50,7 +50,7 @@ class Home extends React.Component {
                             </Switch>
                         </Content>
                         <Footer className="footer">
-                            Copyright © 2017 贷超天玑系统
+                            Copyright © 2017 后台管理系统
                         </Footer>
                     </Layout>
                 </Layout>
