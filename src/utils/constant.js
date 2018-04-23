@@ -7,9 +7,9 @@
 /**
  * dev url
  * */
-// export const DEV_URL = 'https://staging.blackfish.cn';
-export const DEV_URL = 'https://api.51datakey.com';
+// export const DEV_URL = '';
+export const DEV_URL = '';
 /**
  * prod url
  * */
-export const PROD_URL = 'https://sfm.blackfish.cn';
+export const PROD_URL = '';
