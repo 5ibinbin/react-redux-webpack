@@ -16,7 +16,7 @@ export const Login = (params) => {
 
 export const getLogin = (params) => {
     axios.request({
-        url: `sfm-web/app/weixin/fund/getProvinceList`,
+        url: `fund/getProvinceList`,
         method: 'post',
         data: params
     })
