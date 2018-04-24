@@ -48,5 +48,47 @@ npm start
 
 ## redux 集成
 
+###### redux的集成需要安装以下文件
+
+	npm install --save redux
+	或
+	yarn add redux  
+
+`redux`是我们需要的基础库，可以把他理解成一个本地数据库
+	
+	npm install --save react-redux
+	或
+	yarn add react-redux
+	
+`react-redux` 是帮助我们完成数据发送订阅
+
+	npm install --save redux-thunk
+	或
+	yarn add redux-thunk
+	
+`redux-thunk`可以帮助我们实现异步`action`
+
+	npm install --save redux-logger
+	或
+	yarn add redux-logger
+	
+`redux-logger`是`redux`的日志中间件
+
+> 以上就是我们使用`redux`需要依赖的库
+
+##### 我们在实际使用的时候还是需要依赖其他的库资源
+
+	npm install --save react-router-dom
+	或
+	yarn add react-router-dom
+	
+使用`react-router`来控制路由
+
+	npm install --save axios
+	或
+	yarn add axios
+	
+使用`axios`来进行网络请求
 
 ## webpack 集成
+
