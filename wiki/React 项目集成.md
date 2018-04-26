@@ -125,3 +125,5 @@ npm start
 	npm install --save-dev html-webapck-plugin
 
 webpack中`entry`配置的相关入口thunk和`extract-text-webpack-plugin`抽取的css样式进行整合到类似`index.html`的入口文件(也可以说是引入外部资源)
+
+> `webpack`需要引入的资源暂时就这些，之后需要我们可以在具体介绍的时候来引入。
