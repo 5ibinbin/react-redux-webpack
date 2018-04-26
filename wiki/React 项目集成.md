@@ -92,3 +92,36 @@ npm start
 
 ## webpack 集成
 
+	npm install webpack-cli webpack --save-dev
+	
+`webpack4.0`之后把`webpack`与`webpack-cli`分开，所以我们首先需要安装以上两种依赖
+
+	npm install --save-dev css-loader file-loader html-loader less less-loader url-loader image-webpack-loader
+	
+现在我们安装各种`loader`，`loader` 用于对模块的源代码进行转换。`loader` 可以将所有类型的文件转换为 `webpack` 能够处理的有效模块。
+
+	npm install --save-dev babel-loader
+	npm install --save-dev babel-core babel-preset-es2015  
+	npm install --save-dev babel-preset-stage-0
+	
+通过安装以上依赖可以帮助我们转换 `ES6`
+
+	npm install --save-dev babel-preset-react
+	
+通过这个命令来支持`react`语法
+
+	npm install --save-dev extract-text-webpack-plugin
+	
+抽离`CSS`样式到指定文件
+
+	npm install --save-dev webpack-dev-server
+	
+通过`webpack-dev-server`来支持实时编译。`webpack-dev-server`启动了一个基于`express`的`http`服务器，它的作用主要是用来编译资源文件，编译后直接放到了内存里面。
+
+	npm install --save-dev open-browser-webpack-plugin
+	
+在我们的服务启动的时候，通过`open-browser-webpack-plugin`插件来自动帮我们打开浏览器
+
+	npm install --save-dev html-webapck-plugin
+
+webpack中`entry`配置的相关入口thunk和`extract-text-webpack-plugin`抽取的css样式进行整合到类似`index.html`的入口文件(也可以说是引入外部资源)
