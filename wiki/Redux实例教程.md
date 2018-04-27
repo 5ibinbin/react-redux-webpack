@@ -134,3 +134,64 @@ export default function LoginReducers(state = initialState, action) {
 ```
 
 > `LoginReducer`根据`LoginAction.js`中不同的状态来执行不同的方法，返回数据。
+
+##### `IndexReducer.js`
+
+```
+import {combineReducers} from 'redux';
+import LoginReducer from './Login';
+
+const rootReducers = combineReducers({
+    LoginReducer
+});
+
+export default rootReducers;
+```
+
+> 通过`combinReducers`将各个`reducer`整合到一起
+
+##### `configureStore.js`
+
+```
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+import rootReducers from '../reducers/Index';
+
+export default function configureStore(initialState) {
+    const createStoreWithMiddleware = applyMiddleware(thunk, logger)(createStore);
+    const store = createStoreWithMiddleware(rootReducers, initialState);
+    return store;
+}
+```
+
+> 将reducer返回的数据绑定到store中  
+
+##### `Index.js`
+
+```
+import React from 'react';
+
+import ReactDOM from 'react-dom';
+import configureStore from './store/configureStore'
+import {Provider} from 'react-redux'
+
+import Login from './pages/login/login';
+
+const store = configureStore();
+
+ReactDOM.render(
+    <Provider store={store}>
+        <Switch>
+            <Route path="/" component={Login} exact/>
+        </Switch>
+    </Provider>, document.getElementById('root'));
+```  
+
+> Provider接受 Redux 的 store 作为 props。  
+
+###### 基本的流程已经梳理完毕，需要梳理一下`redux`的数据流向
+
+参考文章：
+
+[Redux中文文档](http://www.redux.org.cn/)
