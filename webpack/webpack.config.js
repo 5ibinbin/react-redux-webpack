@@ -5,26 +5,21 @@
  */
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+function resolve(relatedPath) {
+    return path.join(__dirname, relatedPath)
+}
 module.exports = {
     devtool: 'source-map',
     entry: path.join(__dirname, '../src/index'),
     output: {
-        path: path.join(__dirname, './build'),
-        filename: '[name].[hash].js'
+        path: path.join(__dirname, '/build'),
+        filename: 'bundle.min.js',
+        chunkFilename: 'bundle.min.js',
     },
     resolve: {
-        extensions: ['.js', '.jsx', 'json', 'css', 'scss'],
-        alias: {
-            components: path.join(__dirname, '/../src/components'),
-            actions: path.join(__dirname, '/../src/actions'),
-            api: path.join(__dirname, '/../src/api'),
-            reducers: path.join(__dirname, '/../src/reducers'),
-            utils: path.join(__dirname, '/../src/utils'),
-            style: path.join(__dirname, '/../src/style'),
-            pages: path.join(__dirname, '/../src/pages'),
-            store: path.join(__dirname, '/../src/store'),
-            assets: path.join(__dirname, '/../src/assets'),
-        },
+        extensions: ['.js', '.jsx', 'json', 'css', 'less']
     },
     module: {
         rules: [
@@ -75,5 +70,12 @@ module.exports = {
                 }
             },
         ]
-    }
+    },
+    plugins: [
+        new webpack.BannerPlugin('版权所有，翻版必究'),  //装逼必备
+        new ExtractTextPlugin('./style.[hash].css'), //css分离
+        new HtmlWebpackPlugin({
+            template: resolve('../public/index.html'),
+        }),
+    ]
 };

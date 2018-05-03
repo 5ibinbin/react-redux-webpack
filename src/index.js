@@ -20,7 +20,7 @@ ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
             <Switch>
-                <Route path="/" component={Login} exact/>
+                <Route path="/login" component={Login} exact/>
                 <Route path="/home" component={Home}/>
                 <Route path="/home/test" component={Test}/>
             </Switch>
