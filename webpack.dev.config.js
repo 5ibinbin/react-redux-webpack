@@ -19,12 +19,13 @@ function resolve(relatedPath) {
 const webpackConfigDev = {
     mode: 'development',
     plugins: [
+        new webpack.BannerPlugin('版权所有，翻版必究'),
         // 定义环境变量为开发环境
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development'),
             IS_DEVELOPMETN: true,
         }),
-        new CleanWebpackPlugin(['build']),
+        // new CleanWebpackPlugin(['build']),
         new HtmlWebpackPlugin({
             template: resolve('/public/index.html'),
         }),
@@ -34,7 +35,7 @@ const webpackConfigDev = {
         }),
     ],
     devServer: {
-        contentBase: resolve('/build'),
+        contentBase: resolve('/public'),
         historyApiFallback: true,
         hot: true,
         host: '0.0.0.0',

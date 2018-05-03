@@ -6,6 +6,7 @@
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
+    devtool: 'source-map',
     entry: path.join(__dirname, '/src/index'),
     output: {
         path: path.join(__dirname, './build'),
