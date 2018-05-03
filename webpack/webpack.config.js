@@ -7,10 +7,10 @@ const path = require('path');
 const webpack = require('webpack');
 module.exports = {
     devtool: 'source-map',
-    entry: path.join(__dirname, '/src/index'),
+    entry: path.join(__dirname, '../src/index'),
     output: {
         path: path.join(__dirname, './build'),
-        filename: '[name].bundle.js'
+        filename: '[name].[hash].js'
     },
     resolve: {
         extensions: ['.js', '.jsx', 'json', 'css', 'scss'],

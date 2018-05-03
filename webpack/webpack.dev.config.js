@@ -27,7 +27,7 @@ const webpackConfigDev = {
         }),
         // new CleanWebpackPlugin(['build']),
         new HtmlWebpackPlugin({
-            template: resolve('/public/index.html'),
+            template: resolve('../public/index.html'),
         }),
         new ExtractTextPlugin('style.css'),
         new OpenBrowserPlugin({
@@ -35,7 +35,7 @@ const webpackConfigDev = {
         }),
     ],
     devServer: {
-        contentBase: resolve('/public'),
+        contentBase: resolve('../public'),
         historyApiFallback: true,
         hot: true,
         host: '0.0.0.0',
